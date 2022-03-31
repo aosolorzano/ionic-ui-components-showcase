@@ -1,0 +1,21 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize" color="primary">
+      list reorder
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-reorder-group disabled="false" (ionItemReorder)="doReOrder($event)">
+      <ion-item *ngFor="let c of characters">
+        <ion-label>{{c}}</ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+</ion-content>
