@@ -1,3 +1,22 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Main Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle *ngFor="let route of routes | async">
+          <ion-item [routerLink]="route.redirectTo" detail="true">
+            <ion-icon [name]="route.icon" slot="start" color="primary"></ion-icon>
+            {{ route.name }}
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- The name of "id" prop is the same of "contentId" prop on ion-menu. -->
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

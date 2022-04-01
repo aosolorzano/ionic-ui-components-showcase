@@ -1,6 +1,6 @@
-<app-header pageTitle="List - Sliding"></app-header>
+<app-header title="List - Sliding"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding" [fullscreen]="true">
   <ion-list>
     <ion-item-sliding *ngFor="let user of users | async">
       <ion-item-options side="start">

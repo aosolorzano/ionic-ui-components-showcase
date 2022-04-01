@@ -1,6 +1,6 @@
-<app-header pageTitle="infinite scroll"></app-header>
+<app-header title="infinite scroll"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding" [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let item of data; let i = index">
       <ion-label>Item {{i + 1}}</ion-label>

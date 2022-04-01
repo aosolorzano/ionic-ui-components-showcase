@@ -1,6 +1,6 @@
-<app-header pageTitle="Fab"></app-header>
+<app-header title="Fab"></app-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" [fullscreen]="true">
   <ion-list mode="ios">
     <ion-item *ngFor="let item of data; let i = index">
       <ion-label>Item {{i}}</ion-label>

@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-
-interface Routes {
-  name: string;
-  icon: string;
-  redirectTo: string;
-}
+import {Component, OnInit} from '@angular/core';
+import {MenuController} from '@ionic/angular';
+import {Route} from '../../interfaces/route';
+import {Observable} from 'rxjs';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -13,28 +11,17 @@ interface Routes {
 })
 export class HomePage implements OnInit {
 
-  public routes: Routes[] = [
-    { name: 'Alert',         icon: 'american-football-outline', redirectTo: '/alert' },
-    { name: 'Action Sheet',  icon: 'alert-circle-outline',      redirectTo: '/action-sheet' },
-    { name: 'Avatar',        icon: 'beaker-outline',            redirectTo: '/avatar' },
-    { name: 'Button',        icon: 'radio-button-off-outline',  redirectTo: '/button' },
-    { name: 'Cards',         icon: 'card-outline',              redirectTo: '/card' },
-    { name: 'Checkbox',      icon: 'checkmark-circle-outline',  redirectTo: '/checkbox' },
-    { name: 'DateTime',      icon: 'calendar-outline',          redirectTo: '/date-time' },
-    { name: 'Fab',           icon: 'car-outline',               redirectTo: '/fab' },
-    { name: 'Grid',          icon: 'grid-outline',              redirectTo: '/grid' },
-    { name: 'Infinite',      icon: 'infinite-outline',          redirectTo: '/infinite' },
-    { name: 'Input',         icon: 'hammer-outline',            redirectTo: '/input' },
-    { name: 'List',          icon: 'list-outline',              redirectTo: '/list' },
-    { name: 'List Re-Order', icon: 'reorder-three-outline',     redirectTo: '/list-reorder' },
-  ];
+  public routes: Observable<Route[]>;
 
-  constructor() {
+  constructor(private dataService: DataService, private menuController: MenuController) {
     // Nothing to implement
   }
 
   ngOnInit() {
-    // Nothing to implement
+    this.routes = this.dataService.getMenuOptions();
   }
 
+  async showMenu() {
+    await this.menuController.open('first');
+  }
 }

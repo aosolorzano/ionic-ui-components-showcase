@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Route} from '../interfaces/route';
 
 @Injectable({
   providedIn: 'root'
@@ -12,4 +13,7 @@ export class DataService {
     return this.httpClient.get('https://jsonplaceholder.typicode.com/users');
   }
 
+  public getMenuOptions() {
+    return this.httpClient.get<Route[]>('/assets/data/menu-options.json');
+  }
 }

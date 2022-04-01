@@ -1,12 +1,15 @@
 <ion-header mode="ios">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first" color="primary"></ion-menu-button>
+    </ion-buttons>
     <ion-title color="primary">Components</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding" [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let route of routes" [routerLink]="route.redirectTo" detail="true">
+    <ion-item *ngFor="let route of routes | async" [routerLink]="route.redirectTo" detail="true">
       <ion-icon [name]="route.icon" slot="start" color="primary"></ion-icon>
       {{ route.name }}
     </ion-item>

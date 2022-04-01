@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-list-reorder',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListReorderPage {
 
   characters: string[] = ['Aquaman', 'Superman', 'Batman', 'Wonder Women', 'Flash'];
+  disableReorder = false;
   constructor() {
     // Nothing to implement
   }

@@ -1,6 +1,6 @@
-<app-header pageTitle="checkbox"></app-header>
+<app-header title="checkbox"></app-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" [fullscreen]="true">
   <ion-list mode="md">
     <ion-item *ngFor="let item of data" (click)="onClick(item)">
       <ion-label>{{ item.name }}</ion-label>

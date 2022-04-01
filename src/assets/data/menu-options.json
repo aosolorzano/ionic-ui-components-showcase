@@ -1,0 +1,16 @@
+[
+  { "name": "Alert",         "icon": "american-football-outline", "redirectTo": "/alert" },
+  { "name": "Action Sheet",  "icon": "alert-circle-outline",      "redirectTo": "/action-sheet" },
+  { "name": "Avatar",        "icon": "beaker-outline",            "redirectTo": "/avatar" },
+  { "name": "Button",        "icon": "radio-button-off-outline",  "redirectTo": "/button" },
+  { "name": "Cards",         "icon": "card-outline",              "redirectTo": "/card" },
+  { "name": "Checkbox",      "icon": "checkmark-circle-outline",  "redirectTo": "/checkbox" },
+  { "name": "DateTime",      "icon": "calendar-outline",          "redirectTo": "/date-time" },
+  { "name": "Fab",           "icon": "car-outline",               "redirectTo": "/fab" },
+  { "name": "Grid",          "icon": "grid-outline",              "redirectTo": "/grid" },
+  { "name": "Infinite",      "icon": "infinite-outline",          "redirectTo": "/infinite" },
+  { "name": "Input",         "icon": "hammer-outline",            "redirectTo": "/input" },
+  { "name": "List",          "icon": "list-outline",              "redirectTo": "/list" },
+  { "name": "List Re-Order", "icon": "reorder-three-outline",     "redirectTo": "/list-reorder" },
+  { "name": "Loading",       "icon": "refresh-circle-outline",    "redirectTo": "/loading" }
+]
