@@ -1,22 +1,26 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="main">
-    <ion-header>
-      <ion-toolbar color="primary">
-        <ion-title>Main Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle *ngFor="let route of routes | async">
-          <ion-item [routerLink]="route.redirectTo" detail="true">
-            <ion-icon [name]="route.icon" slot="start" color="primary"></ion-icon>
-            {{ route.name }}
-          </ion-item>
-        </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  <!-- The name of "id" prop is the same of "contentId" prop on ion-menu. -->
-  <ion-router-outlet id="main"></ion-router-outlet>
+  <!-- Property "when" can be: xs, sm, md, lg, or xl -->
+  <!-- Property "contentId" must be the same as declared in "router-outlet" id. -->
+  <ion-split-pane when="md" contentId="main">
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Main Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle *ngFor="let route of routes | async"
+              auto-hide="false"><!--NOTE: set to 'false' because the use of "ion-split-pane" -->
+            <ion-item [routerLink]="route.redirectTo" detail="true">
+              <ion-icon [name]="route.icon" slot="start" color="primary"></ion-icon>
+              {{ route.name }}
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <!-- Property "id" must be the same as declared in "ion-menu", property "contentId". -->
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

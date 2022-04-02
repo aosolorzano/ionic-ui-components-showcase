@@ -13,7 +13,15 @@ export class DataService {
     return this.httpClient.get('https://jsonplaceholder.typicode.com/users');
   }
 
+  public getAlbums() {
+    return this.httpClient.get('https://jsonplaceholder.typicode.com/albums');
+  }
+
   public getMenuOptions() {
     return this.httpClient.get<Route[]>('/assets/data/menu-options.json');
+  }
+
+  public getHeroes() {
+    return this.httpClient.get<Route[]>('/assets/data/superheroes.json');
   }
 }

@@ -1,0 +1,26 @@
+<ion-header mode="ios" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize" color="primary">
+      Search
+    </ion-title>
+  </ion-toolbar>
+  <ion-searchbar inputmode="text"
+                 [value]="searchText"
+                 (ionChange)="onChange($event)"
+                 debounce="500"
+                 placeholder="Search by id, name, etc."
+                 animated="true">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <ion-list>
+    <ion-list-header>Albums</ion-list-header>
+    <ion-item *ngFor="let album of albums | filter:searchText">
+      <ion-label>{{album.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

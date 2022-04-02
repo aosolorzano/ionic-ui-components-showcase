@@ -25,6 +25,9 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+/* Animate CSS */
+@import "~animate.css/animate.min.css";
+
 /* Used to personalize ionic ui components for the entire app. */
 .red, .red .action-sheet-icon {
   color: red !important;
